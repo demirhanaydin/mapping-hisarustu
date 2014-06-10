@@ -19,7 +19,7 @@
 
   <div id="sidebar">
     <div class="sidebar_header">
-      <h3>Mapping Hisarustu</h3>
+      <h3><%= link_to "Mapping Hisarustu", root_path %></h3>
     </div>
   
 
@@ -34,7 +34,7 @@
               <option value="four">Shop</option>
               <option value="five">Bookstore</option>
           </select>
-          <%= submit_tag "Find", class: 'btn' %>
+          <%= submit_tag "Find", class: 'form-control btn' %>
         <% end %>
       </p>
       <hr>
