@@ -38,4 +38,11 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# location
 gem 'geocoder'
+
+group :production do
+  # heroku static assets
+  gem 'rails_serve_static_assets'
+  gem 'rails_12factor'
+end
