@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MappingHisarustu</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+  <!-- Mobile meta tags-->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="MobileOptimized" content="320"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="cleartype" content="on">
+</head>
+<body>
+
+  <div id="sidebar">
+    <div class="sidebar_header">
+      <h3>Mapping Hisarustu</h3>
+    </div>
+  
+
+    <div class="sidebar_content">
+      <p>
+        <%= form_tag places_path, :method => :get, html: {class: "form-inline"} do %>
+          <input type="text" name="search" class="form-control" placeholder="Search place, location etc." />
+          <select class="form-control span1">
+              <option value="one">Label</option>
+              <option value="two">Restaurant</option>
+              <option value="three">Library</option>
+              <option value="four">Shop</option>
+              <option value="five">Bookstore</option>
+          </select>
+          <%= submit_tag "Find", class: 'btn' %>
+        <% end %>
+      </p>
+      <hr>
+      <div class='text-left'>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+
+  <div class="toggle_description btn" type="button">
+    &larr; About this map
+  </div>
+
+  <div class="description_box">
+    <div class="x_button toggle_description btn btn-primary" type="button">
+      <strong>X</strong>
+    </div>
+    <div class="description_box_header"></div>
+    <div class="description_box_content">
+      <div class="description_box_text"></div>
+      <div id="caption_box"></div>
+    </div>
+  </div>
+  <div class="description_box_cover"></div>
+  
+  <div id="map"></div>
+
+</body>
+</html>
