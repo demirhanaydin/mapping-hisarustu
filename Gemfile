@@ -41,6 +41,9 @@ gem 'spring',        group: :development
 # location
 gem 'geocoder'
 
+# leaflet
+gem 'leaflet-rails', '>=0.6.4'
+
 group :production do
   # heroku static assets
   gem 'rails_serve_static_assets'
