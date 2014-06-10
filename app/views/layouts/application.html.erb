@@ -24,10 +24,9 @@
   
 
     <div class="sidebar_content">
-      <p>
-        <%= form_tag places_path, :method => :get, html: {class: "form-inline"} do %>
+        <%= form_tag places_path, :method => :get, class: "form-inline" do %>
           <input type="text" name="search" class="form-control" placeholder="Search place, location etc." />
-          <select class="form-control span1">
+          <select class="form-control span2">
               <option value="one">Label</option>
               <option value="two">Restaurant</option>
               <option value="three">Library</option>
@@ -36,7 +35,6 @@
           </select>
           <%= submit_tag "Find", class: 'form-control btn' %>
         <% end %>
-      </p>
       <hr>
       <div class='text-left'>
         <%= yield %>
