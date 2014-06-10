@@ -62,3 +62,25 @@
     </div>
   </div>
 <% end %>
+
+<script>
+  $(document).ready(function(){
+    var popup = L.popup();
+    var temp_marker = new L.Marker;
+
+    function onMapClick(e) {
+      window.map.removeLayer(temp_marker);
+      // popup
+      //     .setLatLng(e.latlng)
+      //     .setContent("You clicked the map at " + e.latlng.lat.toString() + "," + e.latlng.lng.toString())
+      //     .openOn(window.map);
+       // L.marker(e.latlng).addTo(map);
+      temp_marker = new L.Marker(e.latlng, {draggable:true});
+      window.map.addLayer(temp_marker);
+      $("input#place_latitude").val(e.latlng.lat.toString());
+      $("input#place_longitude").val(e.latlng.lng.toString());
+    }
+
+    window.map.on('click', onMapClick);
+  })
+</script>
