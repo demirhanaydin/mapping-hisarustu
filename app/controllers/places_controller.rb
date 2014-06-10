@@ -6,6 +6,7 @@ class PlacesController < ApplicationController
   def index
     if params[:search]
       @places = Place.near(params[:search], 5)
+      @has_distance = true
     else
       @places = Place.all
     end

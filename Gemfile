@@ -49,3 +49,6 @@ group :production do
   gem 'rails_serve_static_assets'
   gem 'rails_12factor'
 end
+
+# application server
+gem 'puma'
